@@ -1,8 +1,7 @@
-# mock_template
 # 用途 
 > 用作本地mock数据
 
-### 框架 express  express-generator
+### 框架 express  express-generator 
 
 ### 使用手册
 > yarn 
@@ -18,3 +17,7 @@
   直接在 app.js 添加 app 模块即可。
   参考：https://segmentfault.com/a/1190000000603336
   >"start": "supervisor app.js"
++mockjs 使用mock
+
+
+
