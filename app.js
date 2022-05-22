@@ -9,6 +9,18 @@ var index = require('./routes/index');
 var haitao = require('./routes/haitao');
 
 var app = express();
+app.all('*',function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
+  // res.header('Access-Control-Allow-Headers', 'Content-Type, Content-Length, Authorization, Accept, X-Requested-With , yourHeaderFeild');
+  res.header('Access-Control-Allow-Headers', '*');
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
+  res.header("Content-type", "application/json;charset=utf-8")
+  if (req.method == 'OPTIONS') {
+    res.send(200); //让options请求快速返回
+  } else {
+    next();
+  }
+});
 var debug = require('debug')('my-application'); // debug模块
 app.set('port', process.env.PORT || 3000); // 设定监听端口
 
